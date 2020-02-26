@@ -1,14 +1,15 @@
-package Model;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
 
-    private List<Card>cardsOnHand;
-    private List<Card> played;
-    private int money;
+    private List<Card>cardsOnHand = new ArrayList<>();
+    private List<Card> played= new ArrayList<>();
+    private Integer money;
     private boolean yourTurn;
 
-    public Player(){}
+    public Player(){
+    }
 
     public List<Card> getCardsOnHand() {
         return cardsOnHand;
@@ -26,11 +27,11 @@ public class Player {
         this.played = played;
     }
 
-    public int getMoney() {
+    public Integer getMoney() {
         return money;
     }
 
-    public void setMoney(int money) {
+    public void setMoney(Integer money) {
         this.money = money;
     }
 

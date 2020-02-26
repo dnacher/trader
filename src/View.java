@@ -1,5 +1,3 @@
-package view;
-
 import java.util.Scanner;
 
 public abstract class View implements ViewInterface {
@@ -30,20 +28,16 @@ public abstract class View implements ViewInterface {
         String value = null;
 
         while (!valid) {
-            this.console(this.displayMessage);
+            UtilsViewMessages.print(this.displayMessage);
             value = this.input.nextLine();
             value = value.trim();
             if(value.length() < 1){
-                this.console("\n*** You must enter a value ***");
+                UtilsViewMessages.print("\n*** You must enter a value ***");
                 continue;
             }
             break;
         }
         return value;
-    }
-
-    public void console(String message){
-        System.out.println(message);
     }
 
 }

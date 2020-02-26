@@ -1,18 +1,17 @@
-package Model;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class Game {
 
-    private List<Player>players;
+    private List<Player>players= new ArrayList<>();;
     private List<Card> cardsOnDeck= new ArrayList<>();
     private List<Card> cemetery = new ArrayList<>();
     public int currentIndex;
     private Map<String,String>currentOnDemand;
 
-    public Game(){}
+    public Game(){
+    }
 
     public List<Player> getPlayers() {
         return players;
