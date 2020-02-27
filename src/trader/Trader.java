@@ -1,3 +1,7 @@
+import model.Card;
+import model.Game;
+import view.MainMenuView;
+
 public class Trader {
 
     public static Game game;
