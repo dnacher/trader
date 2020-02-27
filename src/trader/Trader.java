@@ -1,10 +1,14 @@
+package trader;
+
 import model.Card;
 import model.Game;
+import model.Player;
 import view.MainMenuView;
 
 public class Trader {
 
     public static Game game;
+    public static Player currentPlayer;
 
     public static void main(String[] args) {
         MainMenuView mmv = new MainMenuView();

@@ -1,3 +1,7 @@
+package view;
+
+import utils.UtilsViewMessages;
+
 import java.util.Scanner;
 
 public abstract class View implements ViewInterface {

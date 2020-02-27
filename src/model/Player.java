@@ -1,14 +1,25 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
 
+    private String name;
     private List<Card>cardsOnHand = new ArrayList<>();
     private List<Card> played= new ArrayList<>();
     private Integer money;
     private boolean yourTurn;
 
     public Player(){
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<Card> getCardsOnHand() {

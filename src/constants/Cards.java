@@ -1,3 +1,5 @@
+package constants;
+
 public class Cards {
     public static final String TRADER =     "Trader    ";
     public static final String THIEF =      "Thief     ";

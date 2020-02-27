@@ -1,3 +1,13 @@
+package view;
+
+import constants.Cards;
+import constants.Menus;
+import model.Card;
+import model.Game;
+import model.Player;
+import trader.Trader;
+import utils.UtilsViewMessages;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -16,18 +26,6 @@ public class MainMenuView extends View {
                 createGame();
                 displayPlayersInformation();
                 break;
-            case "G":
-
-                break;
-            case "H":
-
-                break;
-            case "S":
-
-                break;
-            case "E":
-
-                break;
             default:
                 UtilsViewMessages.print("\n*** Invalid selection *** Try again");
                 break;
@@ -43,10 +41,11 @@ public class MainMenuView extends View {
         Trader.game.setCurrentIndex(0);
         for(int i=0; i<numPlayers;i++){
             Player player = new Player();
+            player.setName("player" + i);
             player.setMoney(7);
             player.setYourTurn(false);
             int finalNum = Trader.game.currentIndex + 3;
-            for(int x=Trader.game.currentIndex; x<finalNum;x++){
+            for(int x = Trader.game.currentIndex; x<finalNum; x++){
                 player.getCardsOnHand().add(Trader.game.getCardsOnDeck().get(x));
             }
             add3CurrentIndex();
@@ -99,9 +98,15 @@ public class MainMenuView extends View {
         Trader.game.setCurrentIndex(Trader.game.getCurrentIndex()+3);
     }
 
+    public static void addCurrentIndex(){
+        Trader.game.setCurrentIndex(Trader.game.getCurrentIndex()+1);
+    }
+
     public static void displayPlayersInformation(){
         for(Player player: Trader.game.getPlayers()){
-            displayCards(player);
+            Trader.currentPlayer = player;
+            UtilsViewMessages.printWithN(Trader.currentPlayer.getName());
+            displayCards(Trader.currentPlayer);
             GameView gv = new GameView();
             gv.display();
         }
@@ -143,4 +148,5 @@ public class MainMenuView extends View {
             return " " + price + "          ";
         }
     }
+
 }
